@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wx.entity.Resident">
+
+	<resultMap type="com.wx.entity.Resident" id="residentMap">
+	 	<id property="id" column="rid" />
+		<result property="name" column="rname" />
+		<result property="tel" column="rtel" />
+		<result property="password" column="rpassword" />
+		<result property="sex" column="rsex" />
+		<result property="f_add" column="rf_add" />
+		<result property="s_add" column="rs_add" />
+		<result property="t_add" column="rt_add" />
+		<result property="province" column="rprovince" />
+		<result property="city" column="rcity" />
+		<result property="county" column="rcounty" />
+	</resultMap>
+	
+	<select id="getResidentByTelPass" parameterType="com.wx.entity.Resident" resultMap="residentMap" >
+		SELECT rid,rname,rtel,rpassword,rsex,rf_add,rs_add,rt_add,rprovince,rcity,rcounty
+		FROM resident
+		WHERE rtel=#{tel} AND rpassword=#{password}
+	</select>
+	
+	<select id="getResidentByTel" parameterType="String" resultMap="residentMap" >
+		SELECT rpassword
+		FROM resident
+		WHERE rtel=#{tel}
+	</select>
+	
+	
+	
+	<insert id="addResident" parameterType="com.wx.entity.Resident" >
+		INSERT INTO resident (rid,rname,rtel,rpassword,rsex,rf_add,rs_add,rt_add,rprovince,rcity,rcounty)
+		VALUES
+		(#{id},#{name},#{tel},#{password},#{sex},#{f_add},#{s_add},#{t_add},#{province},#{city},#{county})
+	</insert>
+	
+	
+	<update id="updateResidentPass" parameterType="com.wx.entity.Resident" >
+		UPDATE resident 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="name!=null">rname=#{name},</if>
+			<if test="password!=null">rpassword=#{password},</if>
+			<if test="sex!=null">rsex=#{sex},</if>
+			<if test="f_add!=null">rf_add=#{f_add},</if>
+			<if test="s_add!=null">rs_add=#{s_add},</if>
+			<if test="t_add!=null">rt_add=#{t_add},</if>
+			<if test="province!=null">rprovince=#{province},</if>
+			<if test="city!=null">rcity=#{city},</if>
+			<if test="county!=null">rcounty=#{county},</if>
+		 </trim>
+		WHERE rtel=#{tel}
+	</update>
+	
+	
+	<insert id="addMiddle">
+		INSERT INTO middle_com_res (mcid,mrid) 
+		VALUES
+		(#{0}, #{1} )
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wx.entity.Article">
+
+	<resultMap type="com.wx.entity.Article" id="articleMap">
+		<id property="id" column="aid" />
+		<result property="title" column="atitle" />
+		<result property="content" column="acontent" />
+		<result property="pic" column="apic" />
+		<result property="time" column="atime" />
+		<result property="cid" column="acid" />
+	</resultMap>
+	
+	
+	<select id="findArticleByCommunityId" parameterType="String" resultMap="articleMap" >
+		SELECT a.aid,a.apic,a.atitle,a.acontent,a.atime
+		FROM article a JOIN community c ON a.acid=c.cid
+		WHERE c.cid=#{cid}
+		ORDER BY a.atime DESC
+		LIMIT 0,3
+	</select>
+	
+	
+	<select id="findAllArticleByCommunityId" parameterType="String" resultMap="articleMap" >
+		SELECT a.aid,a.apic,a.atitle,a.acontent,a.atime
+		FROM article a JOIN community c ON a.acid=c.cid
+		WHERE c.cid=#{cid}
+		ORDER BY a.atime DESC
+	</select>
+	
+	
+
+
+	
+	<select id="findArticleById" parameterType="String" resultMap="articleMap" >
+		SELECT a.aid,a.apic,a.atitle,a.acontent,a.atime
+		FROM article a 
+		WHERE aid=#{aid}
+	</select>
+	
+	
+	
+
+
+
+
+</mapper>
+

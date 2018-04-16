@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wx.entity.Community">
+
+	<resultMap type="com.wx.entity.Community" id="communityMap">
+	 	<id property="id" column="cid" />
+		<result property="name" column="cname" />
+		<result property="address" column="caddress" />
+		<result property="property" column="cproperty" />
+		<result property="phone" column="cphone" />
+		<result property="province" column="c_province" />
+		<result property="city" column="c_city" />
+		<result property="county" column="c_county" />
+		<result property="water" column="cwater" />
+		<result property="electric" column="celectric" />
+	</resultMap>
+	
+
+	
+	<!-- 根据用户id获取用户所属的社区 -->
+	<select id="findCommunityListByRid" parameterType="String" resultMap="communityMap">
+		SELECT cid,cname,caddress,cproperty,cphone,c_province,c_city,c_county,cwater,celectric
+		FROM middle_com_res m JOIN community c ON c.cid=m.mcid
+		JOIN resident r ON m.mrid=r.rid
+		WHERE r.rid=#{rid}
+	</select>
+	
+	
+	
+	<select id="findCommunityList" resultMap="communityMap">
+		SELECT cid,cname
+		FROM community
+	</select>
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wx.entity.Fault">
+
+	<resultMap type="com.wx.entity.Fault" id="faultMap">
+	 	<id property="id" column="fid" />
+		<result property="area" column="farea" />
+		<result property="thing" column="fthing" />
+		<result property="descripe" column="fdescripe" />
+		<result property="flag" column="flag" />
+		<result property="rid" column="frid" />
+	</resultMap>
+	
+	<select id="findFaultByResidentId" parameterType="String" resultMap="faultMap" >
+		SELECT fid,farea,fthing,fdescripe,flag,frid
+		FROM fault
+		WHERE frid=#{rid}
+	</select>
+	
+	<insert id="addFault" parameterType="com.wx.entity.Fault">
+		INSERT INTO fault (farea,fthing,fdescripe,flag,frid) VALUES
+		( #{area},#{thing},#{descripe}, #{flag},#{rid})
+	</insert>
+	
+	
+	
+	<select id="findFaultById" parameterType="String" resultMap="faultMap" >
+		SELECT fid,farea,fthing,fdescripe,flag
+		FROM fault
+		WHERE fid=#{fid}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+</mapper>

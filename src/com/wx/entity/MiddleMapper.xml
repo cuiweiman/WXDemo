@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wx.entity.Middle">
+
+	<resultMap type="com.wx.entity.Middle" id="middleMap">
+	 	<id property="cid" column="mcid" />
+	 	<id property="rid" column="mrid" />
+	 	
+	</resultMap>
+	
+	<insert id="addMiddle" parameterType="com.wx.entity.Middle">
+		INSERT INTO middle_com_res VALUES
+		( #{cid},#{rid})
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+</mapper>

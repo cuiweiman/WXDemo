@@ -1,0 +1,8 @@
+com.wx.action
+com.wx.dao
+com.wx.dao.impl
+com.wx.entity
+com.wx.service
+com.wx.service.impl
+com.wx.test
+com.wx.util

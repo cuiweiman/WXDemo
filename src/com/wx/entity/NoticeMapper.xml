@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wx.entity.Notice">
+
+	<resultMap type="com.wx.entity.Notice" id="noticeMap">
+	 	<id property="id" column="nid" />
+		<result property="title" column="ntitle" />
+		<result property="content" column="ncontent" />
+		<result property="time" column="ntime" />
+		<result property="cid" column="ncid" />
+	</resultMap>
+	
+	<select id="findNoticeByCommunityId" parameterType="String" resultMap="noticeMap" >
+		SELECT n.nid,n.ntitle,n.ncontent,n.ntime
+		FROM notice n JOIN community c ON n.ncid=c.cid
+		WHERE c.cid=#{cid}
+	</select>
+	
+	
+	<select id="findNoticeById" parameterType="String" resultMap="noticeMap" >
+		SELECT n.nid,n.ntitle,n.ncontent,n.ntime
+		FROM notice n
+		WHERE nid=#{nid}
+	</select>
+	
+	<select id="findNoticeNew" parameterType="String" resultMap="noticeMap" >
+		SELECT nid,ntitle
+		FROM notice
+		WHERE ncid=#{cid}
+		ORDER BY ntime DESC
+		LIMIT 0,1
+	</select>
+	
+	
+	
+</mapper>

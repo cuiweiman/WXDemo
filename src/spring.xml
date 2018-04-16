@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+      xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:aop="http://www.springframework.org/schema/aop"
+      xmlns:tx="http://www.springframework.org/schema/tx"
+	  xmlns:mvc="http://www.springframework.org/schema/mvc"
+		
+      xsi:schemaLocation="
+	
+	  http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	  
+	  http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 	  
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	  
+	  http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        
+      ">
+      
+      
+      
+      
+      
+      
+      
+      <!-- 配置C3P0连接池,目的：管理数据库连接 -->
+      <bean id="comboPooledDataSourceID" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+      		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+                  <property name="jdbcUrl" value="jdbc:mysql://58.87.85.150:3306/smarthome?useUnicode=true&amp;characterEncoding=UTF-8" />
+                  <property name="user" value="root" />
+                  <property name="password" value="123456" />
+      </bean>
+      
+      
+      
+      
+      <!-- 配置SqlSessionFactoryBean，目的：加载mybaits配置文件和映射文件，即替代原Mybatis工具类的作用 -->
+      <bean id="sqlSessionFactoryBeanID" class="org.mybatis.spring.SqlSessionFactoryBean">
+      		<property name="configLocation" value="classpath:mybatis.xml"/>
+      		<property name="dataSource" ref="comboPooledDataSourceID"/>
+      </bean>
+      
+ 
+ 
+ 
+      <!-- 配置Mybatis的事务管理器，即因为Mybatis底层用的是JDBC事务管事器，所以在这里依然配置JDBC事务管理器 -->
+      <bean id="dataSourceTransactionManagerID" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      		<property name="dataSource" ref="comboPooledDataSourceID"/>
+      </bean>
+      
+      
+
+      
+      <!-- 配置事务通知，即让哪些方法需要事务支持 -->
+      <tx:advice id="tx" transaction-manager="dataSourceTransactionManagerID">
+      		<tx:attributes>
+                        <tx:method name="add*" propagation="REQUIRED" />
+                        <tx:method name="update*" propagation="REQUIRED" />
+                        <tx:method name="delete*" propagation="REQUIRED" />
+      			<tx:method name="*" propagation="REQUIRED"/>
+      		</tx:attributes>
+      </tx:advice>
+      
+      
+      
+      
+      
+      <!-- 配置事务切面，即让哪些包下的类需要事务 -->
+      <aop:config>
+      	<aop:pointcut expression="execution(* com.wx.dao.impl.*.*(..))" id="pointcut" />
+     		<aop:advisor advice-ref="tx" pointcut-ref="pointcut"/>
+      </aop:config>
+      
+      
+      
+
+
+
+
+
+      <!-- 注册Dao -->
+      
+      <bean id="noticeDaoID" class="com.wx.dao.impl.NoticeDaoImpl">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID" />
+      </bean>
+      
+      
+      <bean id="articleDaoID" class="com.wx.dao.impl.ArticleDaoImpl">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID" />
+      </bean>
+      
+      
+      <bean id="faultDaoID" class="com.wx.dao.impl.FaultDaoImpl">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID" />
+      </bean>
+      
+      <bean id="communityDaoID" class="com.wx.dao.impl.CommunityDaoImpl">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID" />
+      </bean>
+      
+      <bean id="residentDaoID" class="com.wx.dao.impl.ResidentDaoImpl">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID" />
+      </bean>
+      
+      <bean id="middleDaoID" class="com.wx.dao.impl.MiddleDaoImpl">
+      		<property name="sqlSessionFactory" ref="sqlSessionFactoryBeanID" />
+      </bean>
+      
+      
+      
+      
+      
+      
+      
+      <!-- 注册Service -->
+      
+      <bean id="noticeServiceID" class="com.wx.service.impl.NoticeServiceImpl">
+      		<property name="noticeDao" ref="noticeDaoID"/>
+      </bean>
+      
+      <bean id="articleServiceID" class="com.wx.service.impl.ArticleServiceImpl">
+      		<property name="articleDao" ref="articleDaoID"/>
+      </bean>
+      
+      <bean id="faultServiceID" class="com.wx.service.impl.FaultServiceImpl">
+      		<property name="faultDao" ref="faultDaoID" />
+      </bean>
+      
+      <bean id="communityServiceID" class="com.wx.service.impl.CommunityServiceImpl">
+      		<property name="communityDao" ref="communityDaoID" />
+      </bean>
+      
+      <bean id="residentServiceID" class="com.wx.service.impl.ResidentServiceImpl">
+      		<property name="residentDao" ref="residentDaoID" />
+      </bean>
+      
+      <bean id="middleServiceID" class="com.wx.service.impl.MiddleServiceImpl">
+      		<property name="middleDao" ref="middleDaoID" />
+      </bean>
+      
+      
+      
+      
+      
+      
+      <!-- 注册Action -->
+      
+      <context:component-scan base-package="com.wx.action"/>
+
+
+	  <!-- 通知springioc容器这些注解的作用 -->
+      <context:annotation-config/>
+      
+      <!-- 视图解析器 -->
+      <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      		<property name="prefix" value="/jsp/"/>
+      		<property name="suffix" value=".jsp"/>
+      </bean>
+      
+      
+</beans>      
+      
+      
+      
+      
+      
+      
+      
+      

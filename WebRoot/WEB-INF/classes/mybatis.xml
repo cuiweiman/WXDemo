@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<mappers>
+		<mapper resource="com/wx/entity/CommunityMapper.xml" />
+		<mapper resource="com/wx/entity/NoticeMapper.xml" />
+		<mapper resource="com/wx/entity/ArticleMapper.xml" />
+		<mapper resource="com/wx/entity/ResidentMapper.xml" />
+		<mapper resource="com/wx/entity/FaultMapper.xml" />
+		<mapper resource="com/wx/entity/CommunityMapper.xml" />
+		<mapper resource="com/wx/entity/ResidentMapper.xml" />
+		<mapper resource="com/wx/entity/MiddleMapper.xml" />
+	</mappers>
+	
+	
+	
+</configuration>
