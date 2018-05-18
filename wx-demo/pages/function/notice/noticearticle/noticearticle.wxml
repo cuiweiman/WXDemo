@@ -1,0 +1,19 @@
+<view class='noticearticle'>
+
+<view class='title'>
+  {{notice.title}}
+</view>
+<view class='datetime'>
+  {{notice.time}}
+</view>
+<view class='content'>
+  <text space='emsp'>
+    {{notice.content}}
+  </text>
+</view>
+
+
+
+
+
+</view>

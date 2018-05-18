@@ -1,0 +1,23 @@
+<view class='container'>
+
+  <view class='banner'>
+    <image style='width:160rpx;height:160rpx;' src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3304918548,2546659365&fm=27&gp=0.jpg' />
+    <view style='line-height:170rpx;'>水费</view>
+  </view>
+
+  <view class='company'>
+    <label class='lab' class='company-name'>缴费单位</label> 
+    <view class="picker">{{community.water}}</view>
+
+  </view>
+
+  <view class='company'>
+    <label class='lab' class='company-name'>户号</label> 
+    <input class="house-id" type='number' placeholder='请输入户号' bindinput="houseIdInput" />
+  </view>
+
+  <button class="nextBt" bindtap="nextBt">
+        下一步
+  </button>
+
+</view>

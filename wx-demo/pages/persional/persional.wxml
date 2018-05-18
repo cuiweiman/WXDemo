@@ -1,0 +1,31 @@
+<view class='container'>
+
+  <image style='width:750rpx;' src='../images/loginLog.png' />
+
+  <view class='users' style=' border-top: 4rpx solid #EEE;'>
+    <text>用户名：{{resident.name}}</text>
+  </view>
+  <view class='users'>
+    <text>性别：{{resident.sex}}</text>
+  </view>
+  <view class='users'>
+    <text>电话：{{resident.tel}}</text>
+  </view>
+  <view class='users'>
+    <text>住址：{{resident.f_add}},{{resident.s_add}},{{resident.t_add}}</text>
+  </view>
+  
+  <view class='users' bindtap='toAboutus'>
+    <text>关于我们</text>
+  </view>
+
+  <button class='btn' bindtap='toPassword'>
+    密码修改
+  </button>
+  <button class='btn' bindtap='logout'>
+    账号注销
+  </button>
+  
+
+
+</view>

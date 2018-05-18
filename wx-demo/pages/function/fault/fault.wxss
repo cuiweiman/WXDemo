@@ -1,0 +1,20 @@
+.fault-report{
+  width: 750rpx;
+  height: 300rpx;
+  background-color: #F5DEB3;
+  margin-top: 100rpx;
+  text-align: center;
+  line-height: 300rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.fault-list{
+  width: 750rpx;
+  height: 300rpx;
+  background-color: #EEB4B4;
+  text-align: center;
+  line-height: 300rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}

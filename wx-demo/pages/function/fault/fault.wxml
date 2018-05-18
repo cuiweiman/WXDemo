@@ -1,0 +1,8 @@
+
+<view class='fault-report' bindtap='report'>
+  故障反馈
+</view>
+
+<view class='fault-list' bindtap='list'>
+  报修列表
+</view>

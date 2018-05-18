@@ -1,0 +1,66 @@
+.container{
+  height: 1206rpx;
+  width: 750rpx;
+  background-color:#f8f8f8;
+  overflow: hidden;
+}
+
+.banner{
+  width: 750rpx;
+  height: 160rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.company{
+  width: 750rpx;
+  height: 100rpx;
+  margin-bottom: 10rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  line-height: 100rpx;
+}
+
+.company-name{
+  margin: 0 150rpx 0 20rpx;
+  font-size: 36rpx;
+}
+
+.picker{
+  flex: block;  
+  float: right;  
+  text-align: right;
+  font-size: 32rpx;
+  color: #9a9a9a;
+}
+
+.house-id{
+  flex: block;  
+  float: right;  
+  text-align: right;  
+  margin-top: 22rpx;  
+  color: #9a9a9a;  
+  font-size: 32rpx  
+}
+
+
+.nextBt{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color:#1EA9FF;
+  margin-top: 30rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+
+<!-- 横幅 -->
+<view class='banner'>
+  <view class="section">
+    <image class='place' src='../images/index/place.png'></image>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="name">
+      <view class="picker">{{community}}</view>
+    </picker>
+  </view>
+</view>
+<!-- 横幅end -->
+
+
+<!-- 轮播图  -->
+<swiper autoplay="true" indicator-dots="true" indicator-color="white" indicator-active-color="#a3a3a3" interval="4000" duration="1000" circular="true" >
+   <block wx:for='{{imgUrls}}' wx:key="imgUrlsID">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style='width:750rpx;'/>
+    </swiper-item>
+   </block>
+</swiper>
+<!-- 轮播图end  -->
+
+
+
+<!-- 主要内容 -->
+<view class='container'>
+
+  <!--功能按钮-->
+  <view class='scroll-box'>
+      <view class="scroll-item" bindtap='notice'>
+        <view><image src="../images/index/notice.png" /></view>
+        <view><text>社区通知</text></view>
+      </view>
+      <view class="scroll-item"  bindtap='fault'>
+        <view><image src="../images/index/baoxiu.png" /></view>
+        <view><text>社区报修</text></view>
+      </view>
+      <view class="scroll-item"  bindtap='pay'>
+        <view><image src="../images/index/wallet.png" /></view>
+        <view><text>自助缴费</text></view>
+      </view>
+      <view class="scroll-item"  bindtap='contact'>
+        <view><image src="../images/index/kefu.png" /></view>
+        <view><text>物业客服</text></view>
+      </view>
+  </view>
+  <!--功能按钮end-->
+
+
+
+
+  <!--最新通知-->
+  <view class='notice'>
+    <image style='width:140rpx;height:60rpx;margin-top:12rpx;padding:0 20rpx 0 20rpx;' src='../images/index/tongzhi.png'></image>
+    <view style='width:2rpx;height:76rpx;background-color:#a0a0a0;margin:0 20rpx 0 20rpx;'></view>
+    <view style='font-size:34rpx;line-height:80rpx;'>{{notice.title}}</view>
+  </view>
+  <!--最新通知end-->
+
+
+
+  
+  <!-- 图片 -->
+  <image src='../images/index/spring.png' class='season'></image>
+
+  <!-- 社区推荐 -->
+  <view class='recommend'>
+    <view class='recommend-title'>
+      <view class='article-banner'>——</view>
+      <view class='article-banner'>每日微文</view>
+      <view class='article-banner'>——</view>
+    </view>
+
+    <view class='article'>
+      <view id='{{article.id}}' class='article-detail' wx:for="{{articleList}}" wx:key="articleListID" wx:for-item="article" bindtap='toArticle'>
+        <image style='height:300rpx;width:200rpx;' src='{{article.pic}}' />
+        <view style='height:20rpx;width:200rpx;font-size:32rpx;margin:20rpx 0 10rpx 0;'>{{article.title}}</view>
+        <view style='height:20rpx;width:200rpx;font-size:32rpx;margin:20rpx 0 10rpx 0;'>{{article.time}}</view>
+      </view>
+    </view>
+  </view> 
+  <!-- 社区推荐end -->
+
+
+</view>
+<!-- 主要内容结束 -->
+

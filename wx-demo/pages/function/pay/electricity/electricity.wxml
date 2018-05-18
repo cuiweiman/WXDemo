@@ -1,0 +1,23 @@
+<view class='container'>
+
+  <view class='banner'>
+    <image style='width:120rpx;height:120rpx;margin:20rpx 20rpx 0 0;' src='../../../images/function/pay/flash.png' />
+    <view style='line-height:170rpx;'>电费</view>
+  </view>
+
+  <view class='company'>
+    <label class='lab' class='company-name'>缴费单位</label> 
+    <view class="picker">{{community.electric}}</view>
+
+  </view>
+
+  <view class='company'>
+    <label class='lab' class='company-name'>户号</label> 
+    <input class="house-id" type='number' placeholder='请输入户号' bindinput="houseIdInput" />
+  </view>
+
+  <button class="nextBt" bindtap="nextBt">
+        下一步
+  </button>
+
+</view>

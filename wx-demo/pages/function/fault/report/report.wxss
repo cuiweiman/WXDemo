@@ -1,0 +1,22 @@
+.descripe{
+  width:750rpx;
+  height:80rpx;
+  border-bottom:2rpx solid #acacac;
+  line-height:80rpx;
+  padding-left:20rpx;
+  background-color: #FFF8DC;
+}
+
+.input-text{
+  width:750rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  padding: 20rpx 0 0 40rpx;
+}
+
+.report-detail{
+  border-bottom: 2rpx solid #acacac;
+  width: 750rpx;
+  height: 300rpx;
+  padding: 20rpx 0 0 40rpx;
+}

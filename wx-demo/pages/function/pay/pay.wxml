@@ -1,0 +1,30 @@
+
+<!-- 轮播图  -->
+<swiper autoplay="true" indicator-dots="true" indicator-color="white" indicator-active-color="#a3a3a3" interval="4000" duration="1000" circular="true" >
+   <block>
+    <swiper-item>
+      <image src="../../images/function/pay/wx.png" style='width:750rpx;height:360rpx;'/>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/function/pay/unionpay.png" style='width:750rpx;height:360rpx;'/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图end  -->
+
+
+
+<view class='container'>
+  <view class='kind' bindtap='toWaterpay'>
+    <image style='width:180rpx;height:180rpx;' src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3304918548,2546659365&fm=27&gp=0.jpg' />
+    <view>水费</view>
+  </view>  
+  <view class='kind' bindtap='toFlashpay'>
+    <image src='../../images/function/pay/flash.png' style='width:130rpx;height:130rpx;margin:20rpx 0 0 10rpx;' />
+    <view style='margin-top:30rpx;'>电费</view>
+  </view>  
+  <view class='kind' bindtap='toPhonepay'>
+    <image style='width:110rpx;height:140rpx;margin-top:20rpx;' src='../../images/function/pay/mobile.png' />
+    <view style='margin-top:20rpx;'>手机充值</view>
+  </view>  
+</view>

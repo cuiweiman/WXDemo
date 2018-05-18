@@ -1,0 +1,16 @@
+<view class='container'>
+
+  <view class='banner'>
+    <image style='width:90rpx;height:120rpx;margin:20rpx;' src='../../../images/function/pay/mobile.png' />
+    <view style='line-height:170rpx;'>手机充值</view>
+  </view>
+
+  <view class='company'>
+    <input class="house-id" type='number' maxlength='11' placeholder='请输入手机号' bindinput="houseIdInput" />
+  </view>
+
+  <button class="nextBt" bindtap="nextBt">
+        下一步
+  </button>
+
+</view>

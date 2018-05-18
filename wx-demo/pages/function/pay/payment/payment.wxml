@@ -1,0 +1,7 @@
+<view class='container'>
+
+  <image src='../../../images/function/pay/payPic.png' class='pic' />
+
+</view>
+
+<view style='display:flex;justify-content: center'>长按识别付款码</view>

@@ -1,0 +1,21 @@
+.noticearticle{
+  width: 750rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  margin: 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+
+.datetime{
+  font-size: 32rpx;
+  color: #aaa999;
+  margin-top: 20rpx;
+}
+

@@ -1,0 +1,38 @@
+.notice-list{
+  height: 100%;
+  width: 750rpx;
+}
+
+
+.notice-detail{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-self: flex-start;
+  border-bottom: 2rpx solid #aeaeae;
+  line-height: 50rpx;
+  margin-top: 50rpx;
+}
+
+.notice-flag{
+  width: 180rpx;
+  height: 80rpx;
+  border-radius: 32rpx;
+  background-color: #FF3030;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  font-size: 36rpx;
+  font-family: Arial, "Microsoft YaHei";
+  font-weight: bold;
+  margin: 10rpx 20rpx 10rpx 0;
+}
+
+
+.notice-title{
+  display: flex;
+  flex-direction: column;
+}
+

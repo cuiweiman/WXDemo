@@ -1,0 +1,37 @@
+<view class="container">  
+  <view class="login-icon">  
+    <image class="login-img" src="../images/loginLog.png"></image>  
+  </view>  
+
+  <view class="login-from">
+  
+    <!--账号-->  
+    <view class="inputView">  
+      <image class="nameImage" src="../images/name.png"></image>  
+      <label class="loginLab">账号</label>  
+      <input class="inputText" type='number' placeholder="手机号" bindinput="phoneInput" maxlength='11' />  
+    </view>  
+    <view class="line"></view>  
+  
+    <!--密码-->  
+    <view class="inputView">  
+      <image class="keyImage" src="../images/key.png"></image>  
+      <label class="loginLab">密码</label>  
+      <input class="inputText" password="true" placeholder="密码" bindinput="passwordInput" />  
+    </view>  
+  
+    <!--按钮-->  
+    <view class="loginBtnView">  
+      <button class="loginBtn" type="primary" bindtap='login' >
+        登录
+      </button> 
+      <button class="registerBtn" type="primary" plain="true" bindtap="register">
+        注册
+      </button> 
+    </view>
+
+    <view class='login-forget' bindtap='forgetPassword'>忘记密码</view>
+
+  </view>  
+
+</view>  

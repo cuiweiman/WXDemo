@@ -1,0 +1,13 @@
+.makeCall{
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 80rpx;
+  margin: 0 0 0 50rpx;
+}
+
+.login-icon{  
+  flex: none;  
+}  
+.login-img{  
+  width: 750rpx;  
+} 

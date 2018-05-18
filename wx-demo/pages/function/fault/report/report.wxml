@@ -1,0 +1,27 @@
+<form bindsubmit="bindFormSubmit">
+
+    <view class='descripe' style='border-top:2rpx solid #acacac;'>
+      故障地点
+    </view>
+    <view class='input-text'>
+      <input placeholder="在此填写故障发生的详细地点" name='fault_area' bindinput="faultInput" />
+    </view>
+
+    <view class='descripe' style='border-top:2rpx solid #acacac;'>
+      故障事物
+    </view>
+    <view class='input-text'>
+      <input placeholder="在此填写发生故障的事物" name='fault_thing' bindinput="faultInput"  />
+    </view>
+
+
+    <view class='descripe'  style='border-top:2rpx solid #acacac;'>
+      故障详情
+    </view>
+    <view class='report-detail' style='margin-bottom:30rpx;'>
+        <textarea placeholder="在此填写发生故障的详细情况" name="fault_descripe"/>
+    </view>
+
+    <button form-type="submit" type='warn'  > 提交 </button>
+
+</form>

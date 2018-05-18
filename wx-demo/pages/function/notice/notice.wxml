@@ -1,0 +1,12 @@
+<view class='notice-list'>
+
+  <view  id='{{notice.id}}' class='notice-detail' bindtap='toDetail' wx:for='{{noticeList}}' wx:key="noticeListID" wx:for-item="notice">
+    <view class='notice-flag'>物业通知</view>
+    <view class='notice-title'>
+      <view>{{notice.title}}</view>
+      <view style='color:#000;font-weight:300;'>{{notice.time}}</view>
+    </view> 
+  </view>
+
+
+</view>

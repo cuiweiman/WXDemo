@@ -1,0 +1,26 @@
+<view class='noticearticle'>
+
+<view class='fault-area'>
+    {{fault.area}}
+</view>
+<view class='fault-thing'>
+  {{fault.thing}}
+</view>
+<view class='fault-content'>
+  <text space='emsp'>
+    {{fault.descripe}}
+  </text>
+</view>
+
+
+<view class='fault-stauts' style='color:green' wx:if="{{1==fault.flag}}">
+  已修缮
+</view>
+
+<view class='fault-stauts' style='color:red' wx:if="{{0==fault.flag}}">
+  处理中
+</view>
+
+
+
+</view>

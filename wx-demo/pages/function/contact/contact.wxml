@@ -1,0 +1,29 @@
+<view class="login-icon">  
+  <image class="login-img" src="../../images/loginLog.png"></image>  
+</view> 
+
+
+<view   class='makeCall'>
+  所在社区：<label style='color:blue'>{{community.name}}</label>
+</view>
+
+<view   class='makeCall'>
+  物业公司：<label style='color:blue'>{{community.property}}</label>
+</view>
+
+<view bindtap='call' class='makeCall'>
+  联系电话：<label style='color:blue'>{{community.phone}}</label>
+</view>
+
+
+<view class='makeCall'>
+  地址：<label style='color:blue'>{{community.address}}</label>
+</view>
+
+<view   class='makeCall'>
+  社区供水单位：<label style='color:blue'>{{community.water}}</label>
+</view>
+
+<view   class='makeCall'>
+  社区供电单位：<label style='color:blue'>{{community.electric}}</label>
+</view>

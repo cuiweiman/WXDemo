@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/register/register",
+    "pages/password/password",
+    "pages/persional/persional",
+    "pages/function/notice/notice",
+    "pages/function/fault/fault",
+    "pages/function/pay/pay",
+    "pages/function/contact/contact",
+    "pages/function/fault/report/report",
+    "pages/function/fault/list/list",
+    "pages/function/pay/waterbill/waterbill",
+    "pages/function/pay/electricity/electricity",
+    "pages/function/pay/phonebill/phonebill",
+    "pages/function/pay/payment/payment",
+    "pages/function/notice/noticearticle/noticearticle",
+    "pages/function/fault/detail/detail",
+    "pages/aboutus/aboutus",
+    "pages/test/test",
+    "pages/index/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智慧之家",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "red",
+    "backgroundColor": "#f9f9f9",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的社区",
+        "iconPath": "pages/images/tabbar/home.png",
+        "selectedIconPath": "pages/images/tabbar/home_on.png"
+      },
+      {
+        "pagePath": "pages/persional/persional",
+        "text": "个人中心",
+        "iconPath": "pages/images/tabbar/persional.png",
+        "selectedIconPath": "pages/images/tabbar/persional_on.png"
+      }
+    ]
+  }
+}

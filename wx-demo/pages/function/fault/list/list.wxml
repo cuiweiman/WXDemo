@@ -1,0 +1,25 @@
+<view class='fault-list'>
+
+<view id='{{fault.id}}' class='fault-detail' bindtap='toDetail'  wx:for='{{faultList}}' wx:key="faultListID" wx:for-item="fault">
+
+
+  <view class='fault-flag' style='background-color:red' wx:if='{{0==fault.flag}}' >
+      处理中
+  </view>
+  <view class='fault-flag' style='background-color:green' wx:else>
+      已修缮
+  </view>
+  
+  <view class='fault-title'>
+     <view>{{fault.area}}</view>
+     <view style='color:#000;font-weight:300;'>{{fault.thing}}</view>
+  </view> 
+
+
+</view>
+
+
+
+
+</view>
+
