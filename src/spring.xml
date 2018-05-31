@@ -35,7 +35,7 @@
       <!-- 配置C3P0连接池,目的：管理数据库连接 -->
       <bean id="comboPooledDataSourceID" class="com.mchange.v2.c3p0.ComboPooledDataSource">
       		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-                  <property name="jdbcUrl" value="jdbc:mysql://58.87.85.150:3306/smarthome?useUnicode=true&amp;characterEncoding=UTF-8" />
+                  <property name="jdbcUrl" value="jdbc:mysql://ip:3306/smarthome?useUnicode=true&amp;characterEncoding=UTF-8" />
                   <property name="user" value="root" />
                   <property name="password" value="123456" />
       </bean>
